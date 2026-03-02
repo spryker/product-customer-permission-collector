@@ -37,11 +37,6 @@ class ProductCustomerPermissionCollectorDependencyProvider extends AbstractBundl
      */
     public const QUERY_CONTAINER_TOUCH = 'QUERY_CONTAINER_TOUCH';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $this->addCollectorFacade($container);
@@ -52,11 +47,6 @@ class ProductCustomerPermissionCollectorDependencyProvider extends AbstractBundl
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCollectorFacade(Container $container): Container
     {
         $container->set(static::FACADE_COLLECTOR, function (Container $container) {
@@ -66,11 +56,6 @@ class ProductCustomerPermissionCollectorDependencyProvider extends AbstractBundl
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addDataReaderService(Container $container): Container
     {
         $container->set(static::SERVICE_DATA_READER, function (Container $container) {
@@ -80,11 +65,6 @@ class ProductCustomerPermissionCollectorDependencyProvider extends AbstractBundl
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addStoreFacade(Container $container): Container
     {
         $container->set(static::FACADE_STORE, function (Container $container) {
@@ -96,11 +76,6 @@ class ProductCustomerPermissionCollectorDependencyProvider extends AbstractBundl
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addTouchQueryContainer(Container $container): Container
     {
         $container->set(static::QUERY_CONTAINER_TOUCH, function (Container $container) {

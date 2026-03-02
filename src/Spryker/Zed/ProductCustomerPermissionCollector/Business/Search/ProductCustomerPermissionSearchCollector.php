@@ -28,10 +28,6 @@ class ProductCustomerPermissionSearchCollector extends AbstractConfigurableSearc
      */
     protected $storeFacade;
 
-    /**
-     * @param \Spryker\Service\UtilDataReader\UtilDataReaderServiceInterface $utilDataReaderService
-     * @param \Spryker\Zed\ProductCustomerPermissionCollector\Dependency\Facade\ProductCustomerPermissionCollectorToStoreFacadeInterface $storeFacade
-     */
     public function __construct(
         UtilDataReaderServiceInterface $utilDataReaderService,
         ProductCustomerPermissionCollectorToStoreFacadeInterface $storeFacade
@@ -41,9 +37,6 @@ class ProductCustomerPermissionSearchCollector extends AbstractConfigurableSearc
         parent::__construct($utilDataReaderService);
     }
 
-    /**
-     * @return string
-     */
     protected function collectResourceType(): string
     {
         return ProductCustomerPermissionConfig::RESOURCE_TYPE_PRODUCT_CUSTOMER_PERMISSION;
@@ -98,9 +91,6 @@ class ProductCustomerPermissionSearchCollector extends AbstractConfigurableSearc
         ];
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\SearchCollectorConfigurationTransfer
-     */
     protected function getCollectorConfiguration(): SearchCollectorConfigurationTransfer
     {
         $searchCollectorConfigurationTransfer = new SearchCollectorConfigurationTransfer();
@@ -109,12 +99,6 @@ class ProductCustomerPermissionSearchCollector extends AbstractConfigurableSearc
         return $searchCollectorConfigurationTransfer;
     }
 
-    /**
-     * @param array $result
-     * @param array $collectItemData
-     *
-     * @return array
-     */
     protected function addExtraCollectorFields(array $result, array $collectItemData): array
     {
         $result[CollectorConfig::COLLECTOR_TOUCH_ID] = (int)$collectItemData[CollectorConfig::COLLECTOR_TOUCH_ID];

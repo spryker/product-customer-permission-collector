@@ -29,9 +29,6 @@ class ProductCustomerPermissionSearchCollectorQuery extends AbstractPropelCollec
      */
     public const FIELD_FK_CUSTOMER = 'fk_customer';
 
-    /**
-     * @return void
-     */
     protected function prepareQuery(): void
     {
         $this->touchQuery

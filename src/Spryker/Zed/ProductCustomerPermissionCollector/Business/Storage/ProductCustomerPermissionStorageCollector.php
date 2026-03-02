@@ -13,9 +13,6 @@ use Spryker\Zed\ProductCustomerPermissionCollector\Persistence\Search\Propel\Pro
 
 class ProductCustomerPermissionStorageCollector extends AbstractStoragePropelCollector
 {
-    /**
-     * @return string
-     */
     protected function collectResourceType(): string
     {
         return ProductCustomerPermissionConfig::RESOURCE_TYPE_PRODUCT_CUSTOMER_PERMISSION;
@@ -47,9 +44,6 @@ class ProductCustomerPermissionStorageCollector extends AbstractStoragePropelCol
         return $this->generateKey($customData, $localeName);
     }
 
-    /**
-     * @return bool
-     */
     protected function isStorageTableJoinWithLocaleEnabled(): bool
     {
         return true;

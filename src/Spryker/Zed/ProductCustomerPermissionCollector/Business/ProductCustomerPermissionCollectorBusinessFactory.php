@@ -22,9 +22,6 @@ use Spryker\Zed\Touch\Persistence\TouchQueryContainerInterface;
  */
 class ProductCustomerPermissionCollectorBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\ProductCustomerPermissionCollector\Business\Search\ProductCustomerPermissionSearchCollector
-     */
     public function createSearchProductCustomerPermissionCollector(): ProductCustomerPermissionSearchCollector
     {
         $searchCollector = new ProductCustomerPermissionSearchCollector(
@@ -37,9 +34,6 @@ class ProductCustomerPermissionCollectorBusinessFactory extends AbstractBusiness
         return $searchCollector;
     }
 
-    /**
-     * @return \Spryker\Zed\ProductCustomerPermissionCollector\Business\Storage\ProductCustomerPermissionStorageCollector
-     */
     public function createStorageProductCustomerPermissionCollector(): ProductCustomerPermissionStorageCollector
     {
         $storageCollector = new ProductCustomerPermissionStorageCollector(
@@ -52,41 +46,26 @@ class ProductCustomerPermissionCollectorBusinessFactory extends AbstractBusiness
         return $storageCollector;
     }
 
-    /**
-     * @return \Spryker\Zed\ProductCustomerPermissionCollector\Dependency\Facade\ProductCustomerPermissionCollectorToStoreFacadeInterface
-     */
     protected function getStoreFacade(): ProductCustomerPermissionCollectorToStoreFacadeInterface
     {
         return $this->getProvidedDependency(ProductCustomerPermissionCollectorDependencyProvider::FACADE_STORE);
     }
 
-    /**
-     * @return \Spryker\Service\UtilDataReader\UtilDataReaderServiceInterface
-     */
     protected function getUtilDataReaderService(): UtilDataReaderServiceInterface
     {
         return $this->getProvidedDependency(ProductCustomerPermissionCollectorDependencyProvider::SERVICE_DATA_READER);
     }
 
-    /**
-     * @return \Spryker\Zed\Touch\Persistence\TouchQueryContainerInterface
-     */
     protected function getTouchQueryContainer(): TouchQueryContainerInterface
     {
         return $this->getProvidedDependency(ProductCustomerPermissionCollectorDependencyProvider::QUERY_CONTAINER_TOUCH);
     }
 
-    /**
-     * @return \Spryker\Zed\ProductCustomerPermissionCollector\Persistence\Search\Propel\ProductCustomerPermissionSearchCollectorQuery
-     */
     protected function createProductCustomerPermissionSearchCollectorQuery(): ProductCustomerPermissionSearchCollectorQuery
     {
         return new ProductCustomerPermissionSearchCollectorQuery();
     }
 
-    /**
-     * @return \Spryker\Zed\ProductCustomerPermissionCollector\Dependency\Facade\ProductCustomerPermissionCollectorToCollectorFacadeInterface
-     */
     public function getCollectorFacade(): ProductCustomerPermissionCollectorToCollectorFacadeInterface
     {
         return $this->getProvidedDependency(ProductCustomerPermissionCollectorDependencyProvider::FACADE_COLLECTOR);
